@@ -1,5 +1,7 @@
 <?php
 
+require get_template_directory() . '/inc/svg-icons.php';
+
 /**
  * Clean menus from classes
  */
@@ -36,10 +38,6 @@ add_filter( 'get_search_form', function ($html ) {
 	return $html;
 } );
 
-/**
- * Load svg icons variables
- */
-require get_template_directory() . '/inc/svg-icons.php';
 
 add_filter('get_search_form', function ($text) {
      return $text . close_icon_svg();

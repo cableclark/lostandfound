@@ -1,9 +1,6 @@
 <?php
 /**
- * Miss Albini functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
+ * Lost and Found functions and definitions
  * @package LostAndFound
  */
 
@@ -23,7 +20,7 @@ require get_template_directory() . '/template-parts/template-tags/template-tags.
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
- * Load the tempalte setup.
+ * Load the template setup.
  * 
  */
 require get_template_directory() . '/inc/setup.php';
@@ -40,13 +37,11 @@ require get_template_directory() . '/inc/widgets.php';
  */
 require get_template_directory() . '/inc/scripts.php';
 
-
 /**
  * Load site's settings.
  * 
  */
 require get_template_directory() . '/inc/settings.php';
-
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.

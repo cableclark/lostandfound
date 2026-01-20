@@ -12,6 +12,6 @@ get_template_part( 'template-parts/layouts/header', 'custom' );
 			get_template_part( 'template-parts/components/content', 'page' );
 		endwhile; 
 		?>
-	</main><!-- #main -->
+	</main>
 <?php
 get_template_part( 'template-parts/layouts/footer-main' );

@@ -4,9 +4,8 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package miss-albini
+ * @package Lost and Found
  */
-
 
 /**
  * Prints HTML with meta information for the current post-date/time.
@@ -30,9 +29,7 @@ function miss_albini_posted_on() {
 		);
 		$icon = '<span class="svg-icon">' . date_function() . "</span>";
 		echo '<span class="posted-on">'  . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
 }
-
 
 /**
  * Prints HTML with meta information for the current author.
@@ -46,8 +43,6 @@ function miss_albini_posted_by() {
 		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
-
-
 
 /**
  * Prints HTML with meta information for the categories, tags and comments.
@@ -73,7 +68,6 @@ function miss_albini_get_tags () {
 			printf( '<span class="tags-links">' . esc_html__( 'Tags: %1$s', 'miss-albini' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 }
-
 
 /**
 * Displays an optional post thumbnail.

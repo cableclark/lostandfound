@@ -12,17 +12,15 @@
 	<div class="excerpt-text">
 		<header class="excerpt-header">
 		<?php
-			
 			the_title( '<h2 class="excerpt-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		?>
 			<div class="excerpt-meta"><?php miss_albini_posted_on();?></div>
-
 		</header>
 		<div class="excerpt-content">
 			<?php the_excerpt();
 			miss_albini_entry_footer(); 
-	 ?>		
-		<!-- <a href="<?php esc_url( the_permalink()) ?>"><button class="read-more"> Read more</button></a> -->
+	 		?>		
+		<a href="<?php esc_url( the_permalink()) ?>"><button class="read-more"> Read more</button></a>
 		</div>
 	</div>	
 </article>

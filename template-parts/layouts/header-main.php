@@ -18,18 +18,18 @@
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
 				?><h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php
-			else :
-				?><p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+			<?php else :?><p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 			<?php
 			endif;
-			/**
-			*$miss_albini_description = get_bloginfo( 'description', 'display' );
-			*if ( $miss_albini_description || is_customize_preview() ) :
-			*	?><p class="site-description"><?php echo $miss_albini_description; // *phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			*<?php endif; ?>
-			*/?>
+			$lostandfound_description = get_bloginfo( 'description', 'display' );
+				if ( $lostandfound_description || is_customize_preview() ) :
+					?>
+					<p class="site-description"><?php echo $lostandfound_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+			<?php endif; ?>
 	    </div>
 		<nav id="site-navigation" class="main-navigation">
-		<?php get_template_part( 'template-parts/navigation/nav' ); ?>	
+		<?php get_template_part( 'template-parts/navigation/nav' ); 	
+		get_sidebar();
+		?>
+		</nav>
 	</header>

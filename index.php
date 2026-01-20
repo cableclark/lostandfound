@@ -1,19 +1,37 @@
 <?php
-get_template_part( 'template-parts/layouts/header-main' );
+
+/**
+ * Routing Logic Tree
+ */
+
+if ( is_home() ) :
+    get_template_part( 'template-parts/layouts/archive', 'home' );
+
+elseif ( is_404() ) :
+    get_template_part( 'template-parts/layouts/content', '404' );
+
+elseif ( is_search() ) :
+    get_template_part( 'template-parts/layouts/archive', 'search' );
+
+elseif ( is_author() ) :
+    get_template_part( 'template-parts/layouts/archive', 'author' );
+
+elseif ( is_category() || is_tag() || is_archive() ) :
+    get_template_part( 'template-parts/layouts/archive', 'default' );
+
+elseif ( is_page( 'about' ) ) :
+
+    get_template_part( 'template-parts/layouts/page', 'about' );
+
+elseif ( is_singular('page') ) :
+    get_template_part( 'template-parts/layouts/content', 'page' );
+
+elseif ( is_singular('post') ) :
+    get_template_part( 'template-parts/layouts/content', 'single' );
+
+else :
+    get_template_part( 'template-parts/layouts/content', 'none' );
+endif;
+
 ?>
-	<main id="primary" class="site-main">
-		<div class="index-container">
-		<?php
-		if ( have_posts() ) :
-			/* Start the Loop */
-			while (have_posts() ) :
-				the_post();
-				get_template_part( 'template-parts/components/excerpt', get_post_type() );
-			endwhile;
-			wp_reset_postdata();
-		endif;?>
-		</div>
-		<?php get_template_part( 'template-parts/navigation/pagination' ); ?>
-	</main>
-<?php
-get_template_part( 'template-parts/layouts/footer-main' );
+	
