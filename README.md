@@ -1,30 +1,60 @@
-=== Lost and found ===
+🎵 lostandfound: Music Zine Theme
+A lightweight, performance-focused WordPress theme built for independent music journalism, record reviews, and scene reporting.
 
-Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+🛠 Project Philosophy
+lostandfound is designed to be fast, accessible, and easy to maintain. It moves away from "legacy bloat" by utilizing modern PHP 8.x features, a clean class-based widget system, and modular templates.
 
-Requires at least: 4.5
-Tested up to: 5.4
-Requires PHP: 5.6
-Stable tag: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
+Zero Bloat: No heavy libraries or jQuery dependencies for core navigation.
 
-A starter theme called Lost and found.
+Performance First: Optimized image loading (eager for featured images).
 
-== Description ==
+Modular Architecture: Logic is separated into /inc and /classes for better organization.
 
-A theme made for a music blog
+📂 Directory Structure
+Plaintext
 
-== Installation ==
+lostandfound/
+├── classes/           # Custom PHP classes (Widgets, Helpers)
+├── inc/               # Hooks, filters, and theme setup
+├── template-parts/    # Reusable HTML snippets (content, sidebars)
+├── assets/            # CSS, JS, and Images
+├── functions.php      # Main theme entry point
+└── style.css          # Theme metadata and global styles
+🚀 Key Features
+Custom Widget System
+Includes a modernized Recent Posts Widget specifically tailored for the zine layout.
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
+Class: Lost_And_Found_Recent_Posts
 
+Location: classes/class-lost-and-found-recent-posts.php
 
-== Credits ==
+Features: Thumbnail support, accessibility fixes, and automated date formatting.
 
-* Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
-# lostandfound
+Template Hierarchy
+The theme uses a refined template part system to keep code clean:
+
+archive.php: Dynamic grid for record reviews and categories.
+
+single.php: Uses template-parts/content-single.php for high-readability interviews.
+
+Sidebars: All sidebar logic is organized within template-parts/sidebars/.
+
+🔧 Installation & Setup
+Upload: Place the lostandfound folder into your /wp-content/themes/ directory.
+
+Activate: Go to Appearance > Themes and activate lostandfound.
+
+Widgets: Navigate to Appearance > Widgets to set up the custom Recent Posts widget in your sidebar.
+
+Excluding Categories
+To hide specific categories from the main feed (e.g., hiding "Internal" posts), use the custom filter provided in inc/widgets.php.
+
+💻 Technical Notes
+Minimum Requirements: PHP 7.4+ (PHP 8.2+ recommended).
+
+CSS Approach: Uses standard WordPress classes (entry-header, entry-content) to ensure 100% compatibility with existing plugins.
+
+JS: Vanilla JavaScript only.
+
+📝 License
+This theme is released under the GPLv2 or later license.
