@@ -1,5 +1,5 @@
 <?php
-get_header();
+get_template_part( 'template-parts/layouts/header-main' );
 ?>
 	<main id="primary" class="site-main site-container full-width">
 		<?php if ( have_posts() ) : ?>
@@ -7,22 +7,20 @@ get_header();
 				<h1 class="search-title ">
 					<?php
 					/* translators: %s: search query. */
-					printf( esc_html__( 'Results: %s', 'Miss Albini' ), '<span>' . get_search_query() . '</span>' );
+					printf( esc_html__( 'Results: %s', 'Lost and found' ), '<span>' . get_search_query() . '</span>' );
 					?>
 				</h1>
 			</header><!-- .page-header -->
 			<?php
 			while ( have_posts() ) :
 				the_post();
-				get_template_part( 'template-parts/content', 'search' );
+				get_template_part( 'template-parts/components/content', 'search' );
 			endwhile;
-			get_template_part( 'template-parts/pagination' );
+			get_template_part( 'template-parts/navigation/pagination' );
 			else :
-				get_template_part( 'template-parts/content', 'none' );
+				get_template_part( 'template-parts/components/content', 'none' );
 			endif;
 		?>
 	</main>
 <?php
-get_sidebar();
-get_sidebar( 'singlebar' );
-get_footer();
+get_template_part( 'template-parts/layouts/footer-main' );

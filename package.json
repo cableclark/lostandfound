@@ -13,7 +13,6 @@
     "build": "wp-scripts build && npm run compile:rtl",
     "watch": "sass --watch sass:. --style=expanded --source-map",
     "compile:css": "sass sass/:./ --style=expanded && wp-scripts lint-style 'style.css' --fix",
-    "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",

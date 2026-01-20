@@ -31,7 +31,7 @@ function miss_albini_posted_on() {
 		$icon = '<span class="svg-icon">' . date_function() . "</span>";
 		echo '<span class="posted-on">'  . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-	}
+}
 
 
 /**

@@ -1,5 +1,6 @@
 <?php
-get_header();?>
+get_template_part( 'template-parts/layouts/header-main' );
+?>
 <main id="primary" class="site-main site-container full-width">
 	<div class="no-results-container">
 		<?php 
@@ -8,4 +9,4 @@ get_header();?>
 	</div>	
 </main><!-- #main -->
 <?php
-get_footer();
+get_template_part( 'template-parts/layouts/footer-main' );

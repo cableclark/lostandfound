@@ -31,5 +31,5 @@
 			*/?>
 	    </div>
 		<nav id="site-navigation" class="main-navigation">
-		<?php get_template_part( 'template-parts/nav' ); ?>	
+		<?php get_template_part( 'template-parts/navigation/nav' ); ?>	
 	</header>

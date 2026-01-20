@@ -1,5 +1,5 @@
 <?php
-get_header();
+get_template_part( 'template-parts/layouts/header-main');
 ?>
 	<main id="primary" class="site-main margin-top">
 		<div class="archive-title">
@@ -19,14 +19,13 @@ get_header();
 				get_template_part( 'template-parts/excerpt-archive', get_post_type() );
 			endwhile;			
 		else :
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part( 'template-parts/components/content', 'none' );
 		endif;
 		?>
 	</div>	
-	<?php get_template_part( 'template-parts/pagination' );
+	<?php get_template_part( 'template-parts/navigation/pagination' );
 	?>
 	</main><!-- #main -->
 <?php
-get_sidebar();
-get_footer();
+get_template_part( 'template-parts/layouts/footer-main' );
 ?>
