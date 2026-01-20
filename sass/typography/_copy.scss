@@ -1,0 +1,61 @@
+@use "../variables-site/colors";
+@use "../variables-site/typography";
+
+
+p {
+	margin-bottom: 1.8rem;
+	font-family: typography.$font-headings;
+	font-size: 16px; 
+	margin: 0.2rem 0;
+	// @media screen and (min-width: $extra_large_screen) {
+	// 	font-size: 1.rem;
+	// }
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	font-family: typography.$font__pre;
+	font-size: 0.9375rem;
+	line-height: typography.$font__line-height-pre;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: typography.$font__code;
+	font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted colors.$mid_orange;
+	cursor: help;
+}
+
+mark,
+ins {
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}

@@ -1,0 +1,46 @@
+<?php
+/**
+ * Lost and Found Theme Customizer
+ *
+ * @package  LostAndFound
+ */
+/**
+ * Add postMessage support for site title and description for the Theme Customizer.
+ */
+add_action( 'customize_register', function( $wp_customize ) {
+    $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+    $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+    $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+    if ( isset( $wp_customize->selective_refresh ) ) {
+        $wp_customize->selective_refresh->add_partial( 'blogname', [
+            'selector'        => '.site-title a',
+            'render_callback' => function() {
+                bloginfo( 'name' );
+            },
+        ] );
+        
+        $wp_customize->selective_refresh->add_partial( 'blogdescription', [
+            'selector'        => '.site-description',
+            'render_callback' => function() {
+                bloginfo( 'description' );
+            },
+        ] );
+    }
+});
+
+/**
+ * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ */
+add_action( 'customize_preview_init', function() {
+    $js_path = get_template_directory() . '/js/customizer.js';
+    $js_ver  = file_exists($js_path) ? filemtime($js_path) : '20260101';
+
+    wp_enqueue_script(
+        'lost-and-found-customizer',
+        get_template_directory_uri() . '/js/customizer.js',
+        ['customize-preview'],
+        $js_ver,
+        true
+    );
+});

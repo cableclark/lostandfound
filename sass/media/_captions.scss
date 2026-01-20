@@ -1,0 +1,30 @@
+@use "../mixins/mixins-master";
+
+.wp-caption, 
+figcaption {
+	margin: 1rem 0;
+	max-width: 100%;
+	font-size: 0.8rem;
+	font-weight: lighter;
+	font-style: italic;
+	text-align: center;
+
+	img[class*="wp-image-"] {
+
+		@include mixins-master.center-block;
+	}
+	
+	.wp-caption-text {
+		margin: 0 0;
+	}
+}
+
+.aligncenter {  
+	margin-bottom: 0;
+	figcaption {
+		margin: 1rem 0;
+	}
+ }
+.wp-caption-text {
+	text-align: center;
+}

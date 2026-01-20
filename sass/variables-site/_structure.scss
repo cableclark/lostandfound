@@ -1,0 +1,15 @@
+$size__site-main: 100%;
+$size__site-sidebar: 25%;
+
+
+
+.crp_related {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.crp_related li::marker { content: ""; }
+

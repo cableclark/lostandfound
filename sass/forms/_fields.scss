@@ -1,0 +1,34 @@
+@use "../variables-site/colors";
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: colors.$mid_orange;
+	border: 1px solid colors.$mid_orange;
+	border-radius: 3px;
+	padding: 3px;
+	width: 100%;
+	&:focus {
+		color: colors.$light_orange;
+	}
+}
+select {
+	border: 1px solid colors.$mid_orange;
+}
+textarea {
+	width: 100%;
+	padding:1rem
+}

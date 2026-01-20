@@ -1,0 +1,96 @@
+@use "../variables-site/colors";
+@use "../variables-site/media";
+@use "../variables-site/typography";
+
+a {
+	color: colors.$mid_orange;
+	text-decoration: none;
+	transition: color 0.3s ease-out;
+	transition: color 0.3s ease-out;
+	transition: color 0.3s ease-out;
+	&:visited {
+		color: colors.$mid_orange;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: colors.$dark_orange;
+	}
+	&:focus {
+		outline: thin dotted;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+.nav-previous,
+.nav-next {
+    p {
+    color: colors.$mid_orange;
+    font-size: 0.8em;
+    }
+}
+.nav-title {
+    font-family: typography.$font-headings;
+}
+.nav-links {
+    display: flex;
+    justify-content: center;
+    line-height: 1rem;
+    .page-numbers {
+        display: block;
+        padding: 0.5rem 0.8rem ;
+    } 
+    .current {
+        border: 1px solid colors.$mid_orange;
+        color: colors.$mid_orange;
+        border-radius:5px;
+    }
+} 
+.cat-links {
+    display: inline-block;
+    margin-top:1rem;
+    font-family:typography.$font-headings;
+	a {
+       
+        border: 0.01rem solid  colors.$mid_orange;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+        border-radius: 2rem;
+        corner-shape: squircle;
+        
+        // color:$light_orange;
+        font-size: 0.7rem;
+        line-height: 1;
+        @media screen and (min-width: media.$large_screen) {
+            font-size: 0.9rem;
+        }
+    }
+    a:hover {
+         color:colors.$light_color;
+        background-color: colors.$dark_orange;
+    }
+}   
+.page-links {
+	clear: both;
+    margin: 0 0 1.5em;
+    padding: 1rem;
+}
+.tags-links {
+    font-size: 0.9rem;  
+    font-family:typography.$font-headings;
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top:50px;
+}
+.edit-link {
+    font-size: 0.8  rem;
+    text-transform: uppercase;
+}
+.pagination {
+    padding: 2rem;
+}

@@ -1,0 +1,123 @@
+@use "../mixins/mixins-master";
+@use "../variables-site/colors";
+@use "../variables-site/media";
+@use "../variables-site/typography";
+
+@mixin header-transition {
+    transition:all 0.2s ease-out;
+  }
+.site-header {
+    z-index: 10000000;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+    top:0;
+    background: colors.$dark_color;
+    box-shadow: 
+    0 2px 4px oklch(0% 0 0 / 25%),        /* 1. Tight contact shadow */
+    0 8px 16px oklch(0% 0 0 / 20%),       /* 2. Mid-level diffusion */
+    0 16px 32px oklch(15% 0.05 260 / 15%);
+  
+    @include header-transition;
+    position:fixed; 
+    @media screen and (min-width: media.$large_screen) {
+        justify-content: space-around;
+        height: 80px;  
+    }  
+}
+
+.smaller-header {
+    @include mixins-master.box-shadow-normal;
+    img {
+        width: 40px;
+        height: 40px;
+    }
+    @media screen and (min-width: media.$small_screen) {
+        height: 60px;
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    @media screen and (min-width: media.$large_screen) {
+        height: 80px;
+        img {
+            width: 60px;
+            height: 60px;
+        }
+        p {
+            font-size: 0.8rem;
+        }
+    }   
+    @media screen and (max-width: media.$small_screen) {
+        height: 50px;
+    }   
+}
+.site-branding {
+    display:flex;
+    align-content:center;   
+    flex-wrap: wrap;
+}
+.site-description,
+.site-title,
+.main-navigation
+ {
+    margin: auto 1rem;
+ }
+.site-description {
+    transition: all 0.2s ease-in;
+    @media screen and (max-width: 558px) {
+        display: none;
+    }
+    font-size: 0.7rem;
+    @media screen and (min-width: media.$medium_screen) {
+        font-size: 0.9rem;
+    }
+}
+.site-title {
+    margin: auto 1rem;
+    font-size: unset;
+    a {
+        @media screen and (max-width: 335px) {
+            display: none;
+        }  
+        display: inline;
+        font-size: unset;
+        font-family:typography.$font__main;
+        font-weight: 400;
+        text-transform: uppercase;
+        color:colors.$black_color;
+        font-size: 0.8rem;
+        line-height: unset;
+        @media screen and (min-width: media.$small_screen) {
+          font-size: 1rem;  
+          font-weight: 900; 
+        }  
+    }
+    a:visited {
+        // color:$black_color;
+    }
+    a:hover {
+        // color: $black_color;
+    }
+ }
+ .smaller-navbar {
+    @media screen and (min-width: media.$extra_large_screen) {
+        a {    
+            font-size:1.1rem;
+        }         
+    }
+ }
+ .custom-logo {
+	height: 50px;
+	width: 50px;
+	margin-top: 0.5em;
+	margin-left: 10px;
+	transition: height 0.2s ease-out, width 0.2s ease-out;
+    @media screen and (min-width: media.$large_screen) {
+        height: 70px;
+	    width: 70px;
+    }
+}

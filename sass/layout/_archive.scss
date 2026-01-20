@@ -1,0 +1,36 @@
+@use "../variables-site/media";
+
+.archives-container {
+    @media screen and (min-width: media.$large_screen)  {
+        display: flex;
+        // justify-content: center;
+        flex-wrap: wrap;
+        max-width: 1300px; 
+        margin: 0 auto; 
+        justify-content: center;
+    }
+    @media screen and (min-width: media.$extra_large_screen)  {
+        max-width: 1500px;
+    }
+}
+
+.archive-title {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 400px;
+    h1 {
+        font-weight: bold;
+        margin-top: 1rem;
+        text-transform: uppercase;
+        @media screen and (min-width: media.$large_screen)  {
+            font-size: 2rem;
+        }
+
+    }
+}
+.archive-h2 {
+    @media screen and (min-width: media.$large_screen)  {
+        line-height: 2.3rem;
+    }
+}

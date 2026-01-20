@@ -1,0 +1,17 @@
+@use "sass:meta";
+@use "../variables-site/colors";
+@use "../variables-site/typography";
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: colors.$light_color;
+	font-family: typography.$font__main;
+	line-height: typography.$font__line-height-body;
+}
+
+@include meta.load-css("headings");
+@include meta.load-css("copy");

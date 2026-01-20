@@ -1,0 +1,48 @@
+@use "../variables-site/media";
+@use "../variables-site/typography";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.ays-arp-under-post-title {
+	clear: both;
+	font-family: typography.$font__main;
+	margin: unset;
+}
+
+h1 {
+	font-size: 1.5rem;
+	@media screen and (min-width: media.$extra_large_screen) {
+		font-size: 2rem;
+	} 
+}
+
+
+h2 {
+	font-size: 1.1rem;
+}
+
+h3 {
+	font-size:1rem;
+}
+
+
+h4 {
+	font-size:1rem;
+}
+
+
+h5 {
+	font-size:1em;
+}
+
+.excerpt-title {
+		font-size: 1.8rem;
+}
+.search-title {
+	font-size: 2rem;
+}
+

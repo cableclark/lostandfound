@@ -1,0 +1,36 @@
+{
+  "name": "lost-and-found",
+  "version": "1.0.1",
+  "description": "This is a Lost and Found theme.",
+  "author": "Igor Stojanvoski <https://www.signified.mk>",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "WordPress",
+    "Theme"
+  ],
+  "scripts": {
+    "dev": "wp-scripts start",
+    "build": "wp-scripts build && npm run compile:rtl",
+    "watch": "sass --watch sass:. --style=expanded --source-map",
+    "compile:css": "sass sass/:./ --style=expanded && wp-scripts lint-style 'style.css' --fix",
+    "compile:rtl": "rtlcss style.css style-rtl.css",
+    "lint": "npm run lint:js && npm run lint:scss",
+    "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
+    "lint:js": "wp-scripts lint-js 'js/*.js'",
+    "bundle": "wp-scripts plugin-zip"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^27.0.0",
+    "archiver": "^7.0.0",
+    "rtlcss": "^4.1.0",
+    "sass": "^1.70.0"
+  },
+  "rtlcssConfig": {
+    "options": {
+      "autoRename": false,
+      "autoRenameStrict": false,
+      "clean": true,
+      "processUrls": false
+    }
+  }
+}

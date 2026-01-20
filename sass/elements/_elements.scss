@@ -1,0 +1,57 @@
+@use "sass:meta";
+@use "../variables-site/colors";
+@use "../variables-site/media";
+
+/* Inherit box-sizing to more easily change it's value on a component level.
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+html {
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+body {
+	// background: white; // Fallback for when there is no custom background color defined.
+	overflow-x: hidden;
+}
+hr {
+	background-color: colors.$light_color;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+@include meta.load-css("lists");
+
+img {
+	object-fit: cover;
+	margin-top: 1.2em; 
+	max-height: 300px;
+	max-width: 100%;
+	@media screen and (min-width: media.$large_screen)  {
+		max-height: 800px;
+	}
+}
+.wp-block-image {
+	display:flex;
+	flex-direction: column;
+    align-items: center;
+	// a {
+	// 	display:flex;
+	// }
+}
+.wp-block-cover	 {
+	max-width:initial;
+	max-height: 300px;
+}
+figure {
+	margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.
+}
+
+.grecaptcha-badge {
+	opacity: 0;
+	visibility: hidden;
+ }
+@include meta.load-css("tables");

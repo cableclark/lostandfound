@@ -1,0 +1,273 @@
+@use "../../mixins/mixins-master";
+@use "../../variables-site/colors";
+@use "../../variables-site/media";
+
+#secondary {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap; 
+	// background-color: #edecf2;
+	color: colors.$black_color;
+	ul {
+		margin: 0;
+		padding: 0;
+		display: flex;
+  		flex-wrap: nowrap;
+  		overflow-x: auto;
+		&::-webkit-scrollbar {
+			display: none;
+		  }
+		 @media screen and (min-width: media.$large_screen)  {
+			flex-wrap: wrap;
+			max-width: 1300px;;
+			justify-content: center;
+		 }
+	}    
+}
+
+.widget {
+	min-width: 300px;
+	select {
+		max-width: 100%;
+	}
+}
+
+.widget_title_container {
+	display: flex;
+	letter-spacing: 0.1rem;
+	word-break: break-all;
+	justify-content: center;
+	@media screen and (min-width: media.$large_screen)  {
+		margin: unset;
+	}
+}
+
+.widget-title,
+.album-of-the-week
+ {
+	background: unset;
+	-webkit-background-clip: unset;
+	-webkit-text-fill-color: unset;
+	font-weight: 400;
+	margin: 0rem 1rem;
+	font-weight: bold;
+	font-size: 1.4rem;
+	text-align: center;
+	@media screen and (min-width: media.$large_screen)  {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+}
+
+.widget-title {
+	color:colors.$dark_orange;
+	margin-top:unset;
+	margin-bottom: 1rem;
+}
+
+.widget_search {
+	padding: 0 0;
+	flex-direction: row;
+	justify-content: center;
+}
+.svg-icons {
+	height: 30px;
+	margin-right: 1rem;
+}
+
+/** 
+* Recent posts
+*/
+
+#recent-posts-3 {
+	padding:2rem 0;
+	max-width: 1440px; 
+	background: #edecf2;
+}
+
+.recent-post-image
+ {	
+	margin-right:1rem;
+	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		@media screen and (min-width: media.$large_screen)  {
+			height: 120px;
+			width: 120px;
+			
+			}
+	img {
+		margin-top: 0;
+		object-fit: cover;
+		height: 100%;
+		min-width:100%;
+		border-radius: 5px;
+		margin-bottom:5px;
+		@media screen and (min-width: media.$large_screen)  {
+			height: unset;
+			min-width: unset;
+			margin-bottom:unset;
+			}
+		}
+	}
+	
+}
+
+.recent-posts
+ {
+	font-family: "Montserrat",sans-serif;
+	font-size: 1rem;
+	width: 250px;
+	margin: 0.5rem 0.2rem;	
+	list-style-type: none;
+    padding: 15px;
+    border-radius: 10px;
+	flex: 0 0 auto;
+	@media screen and (min-width: media.$small_screen)  {
+		margin: 0.8rem 0.4rem;
+	}
+	@media screen and (min-width: media.$large_screen)  {
+		margin: 0.5rem;	
+		padding: 1rem;
+		width: 360px;
+		line-height: 1.5;
+		margin-bottom: 2rem;
+		display: flex;
+	}	
+}
+
+.recent-post-image
+{
+	transition: background 0.3s ease;
+}
+.recent-post-image:hover {
+	opacity: 0.7;
+} 
+.recent-posts__data
+ {
+	display: flex;
+	flex-direction: column;
+	@media screen and (min-width: media.$extra_large_screen)  {
+		font-size: 1.2rem;
+	}
+	span {		
+		margin-top: 0.2rem;
+	}
+	a,
+	a:visited {
+		line-height: 1.2;
+    	font-family: auto;
+	}
+	a:hover {
+		color: colors.$mid_orange;
+	}
+}
+.crp_date {
+	display: block;
+	font-size: 13px;
+	font-weight: 300;
+}
+.post-date {
+	font-weight: 300;
+	font-size: 12px;
+}
+
+
+/** 
+* Album of the week widget 
+*/
+#custom_html-2 {
+	margin-bottom: -1px;
+	@include mixins-master.background;
+	padding-top: 2rem;
+	color:colors.$light_color;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+	.textwidget{
+		max-width: 400px;
+	}
+}
+
+#custom_html-3{
+	color:colors.$dark_orange;
+	padding-top: 2rem;
+}
+
+#custom_html-2,
+#custom_html-3 {
+	@media screen and (min-width: media.$extra_large_screen)  {
+	min-height: 50vh;
+    display: grid;
+	place-items: center;
+	}
+}
+.textwidget{
+	margin-bottom: 1rem;
+	display: grid;
+	place-items: center;
+}
+.crp_thumb {
+	margin-top: 0;	
+	width: 150px;
+	height: 150px;
+	@media screen and (min-width: media.$large_screen)  {
+		width: 170px;
+		height: 170px;
+	}
+}
+.of-the-week-link {
+	text-align: center;
+	border: 1px solid #AC022C;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: none;
+	border-radius: 30px;
+	padding: 12px 30px;
+}
+
+#custom_html-2 > div > p > .of-the-week-link {
+	border: 1px solid white;
+}
+
+.of-the-week-link:active {
+	transform: scale(0.99);
+}
+.of-the-week-link:hover {
+	@media screen and (min-width: media.$large_screen) {
+		@include mixins-master.background; 
+		color: colors.$light_color;
+		border: 1px solid white;
+		box-shadow: unset;
+	}
+}
+#custom_html-2 > div > p > .of-the-week-link:hover {
+	border: 1px solid #AC022C;
+	background:white;
+	color: #AC022C;;
+}
+.textwidget {
+	padding: 1rem;
+	p {
+		display: flex;
+		justify-content: center;
+	}
+}
+#widget_crp-4
+{
+	margin-bottom:2rem;
+	max-width: 800px; 
+}
+
+
+
+.ssba {
+	img {
+		margin-top: 0;
+	}
+}
+
+.ssbp-wrap {
+	display:inline-block;
+}

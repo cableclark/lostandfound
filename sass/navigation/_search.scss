@@ -1,0 +1,174 @@
+@use "../mixins/mixins-master";
+@use "../variables-site/colors";
+@use "../variables-site/media";
+@use "../variables-site/typography";
+
+.widget_search {
+	padding:  20px;
+    top: 60px; 
+    position: fixed;
+    width: 100%;
+    list-style: none;
+    height: 80px;
+    // margin-top: 40px;
+    background-color: colors.$light_color;
+    opacity:0;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    z-index: -150000;
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    transform: translateY(0px);
+    align-content: center;
+    margin-bottom: 2rem;
+    @media screen and (min-width: media.$small_screen) {
+            top: 50px; 
+    }
+    @media screen and (min-width: media.$large_screen) {
+        // display: flex;
+        top:  0px;
+        height: 100px;
+        width: 100vw;
+         flex-wrap: wrap;
+        display: flex;
+        justify-content: center ;
+        align-content: center; 
+        // justify-content: center ;
+        // align-content: center; 
+    }
+}
+
+.wp-block-search__inside-wrapper {
+    display: flex;
+    flex: auto;
+    flex-wrap: nowrap;
+    max-width: 80%;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+     margin-left: auto;
+    margin-right: auto;
+}
+
+.search-active {
+    z-index: 150000;
+    opacity:1; 
+    @media screen and (min-width: media.$large_screen) {
+        transform: translateY(100px);
+    } 
+}
+
+.search-active-scrolled {
+    z-index: 150000;
+    transform: translateY(0px);
+    opacity:1;
+    @media screen and (min-width: media.$small_screen) {
+        transform: translateY(10px);
+    }  
+    @media screen and (min-width: media.$large_screen) {
+        transform: translateY(80px);
+    }
+}
+
+.menu-scroller {
+    @media screen and (min-width: media.$large_screen) {
+        transform: translateY(80px);
+    }  
+}
+
+.menu-scroller2 {
+    @media screen and (min-width: media.$large_screen) {
+        transform: translateY(100px);
+    }  
+}
+
+.search-form {
+    margin: auto 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2px;
+    @media screen and (max-width: 425px) {
+        display: block;
+    }
+    @media screen and (min-width: media.$large_screen) {
+        width: unset;
+    }
+    label {
+        input[type="search"] {
+            @media screen and (min-width: media.$large_screen) {
+                width: 600px;
+            } 
+        }
+    }
+}		
+
+.search-field {
+    font-size: 1em;
+    height: 45px;
+    font-family:typography.$font__main;
+    flex-grow: 3;
+    color: colors.$light_color;
+    border-radius: 0;  	
+    text-align: center; 
+    @media screen and (max-width: 425px) {
+        height: 35px;
+        width: 100%;
+    }
+
+}
+
+.search-form  {
+    input[type="submit"] {
+        @include mixins-master.background;
+        color:colors.$light_color;   
+        border-radius: 0; 
+        width: 100%; 
+        height: 35px;
+        margin-top:10px;
+        border-radius: 0 3px 3px 0;
+        opacity: 1;
+        @media screen and (min-width: 425px) {
+            margin-top:0px;
+            transform: translateX(-3px);
+            width: 100px;
+            height: 45px;
+        }    
+        @media screen and (min-width: media.$large_screen) {
+            width: 200px;
+        } 
+    }
+    input[type="submit"]:hover {
+        cursor: pointer; 
+    }
+}
+
+.search-icon {
+    height:44px;
+    cursor: pointer;
+    align-self: center;
+    stroke:colors.$light_color;
+    fill: colors.$light_color;
+    margin-top: 15px;
+    border: 1px solid colors.$light_color;
+    padding: 10px;
+    border-radius: 5px;
+    @media screen and (min-width: media.$extra_large_screen) {
+        margin-top: 0;
+        border: none;  
+        stroke: colors.$black_color; 
+        fill: colors.$black_color;
+    } 
+}
+
+.search-x {
+    align-self: center;
+    width:20px;
+    stroke: colors.$black_color;
+    height:20px;
+    margin: 10px 15px;
+    cursor: pointer;
+    display: none;
+    @media screen and (min-width: 425px) {
+        display: block;
+   }    
+}
+
