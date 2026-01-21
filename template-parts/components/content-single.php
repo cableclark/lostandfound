@@ -17,8 +17,8 @@
 					miss_albini_posted_on();
 					miss_albini_posted_by();
 					?>
-			</div><!-- .entry-meta -->
-		</header><!-- .entry-header -->
+			</div>
+		</header>
 		<div class="entry-content">
 			<?php
 			the_content();

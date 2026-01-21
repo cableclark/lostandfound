@@ -31,5 +31,8 @@
       "clean": true,
       "processUrls": false
     }
+  },
+  "dependencies": {
+    "sharp": "^0.34.5"
   }
 }

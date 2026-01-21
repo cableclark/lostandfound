@@ -10,39 +10,37 @@
 /**
  * Prints HTML with meta information for the current post-date/time.
  */
-function miss_albini_posted_on() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-		}
-		$time_string = sprintf(
-			$time_string,
-			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date('j. F, Y') ),
-			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date('j m, Y') )
-		);
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( ' %s', 'post date', 'miss-albini' ),
-			 $time_string 
-		);
-		$icon = '<span class="svg-icon">' . date_function() . "</span>";
-		echo '<span class="posted-on">'  . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-}
 
+function miss_albini_posted_on() {
+    $date_url  = esc_attr( get_the_date( DATE_W3C ) );
+    $date_text = esc_html( get_the_date( 'j. F, Y' ) );
+    
+    // Simple output: Just the date wrapped in a time tag
+    echo '<span class="posted-on">';
+    echo '<span class="svg-icon">' . date_function() . '</span>';
+    echo ' <time class="entry-date published" datetime="' . $date_url . '">' . $date_text . '</time>';
+    echo '</span>';
+}
 /**
  * Prints HTML with meta information for the current author.
  */
 function miss_albini_posted_by() {
-		$byline = sprintf(
-			/* translators: %s: post author. */
-			esc_html_x( ' by: %s', 'post author', 'miss-albini' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		);
-		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+    $author_id = get_the_author_meta( 'ID' );
+    $author_url = esc_url( get_author_posts_url( $author_id ) );
+    $author_name = esc_html( get_the_author() );
 
-	}
+    echo '<span class="byline">';
+    // 1. Author Thumbnail (Avatar)
+    echo '<span class="author-avatar">';
+    echo get_avatar( $author_id, 32 ); // 32 is the size in pixels
+    echo '</span>';
+    // 2. Author Link
+    echo ' ' . esc_html__( 'by:', 'lostandfound' ) . ' ';
+    echo '<span class="author vcard">';
+    echo '<a class="url fn n" href="' . $author_url . '">' . $author_name . '</a>';
+    echo '</span>';
+    echo '</span>';
+}
 
 /**
  * Prints HTML with meta information for the categories, tags and comments.
